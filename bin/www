@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+'use strict';
+
+require('env2')(`${__dirname}/../.env`);
+
+const fs = require('fs');
+const http = require('http');
+const https = require('https');
+const app = require('../app');
+const Logger = require('../helpers/logger');
+
+app.set('port', process.env.PORT || 3000);
+app.set('sslPort', process.env.SSL_PORT || 3001);
+
+const cert = fs.readFileSync(`${__dirname}/../keys/certificate.pem`);
+const key = fs.readFileSync(`${__dirname}/../keys/private-key.pem`);
+
+const credentials = { key, cert };
+
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(app.get('port'), () => {
+    Logger.info(`http running on port ${app.get('port')}`);
+});
+
+httpsServer.listen(app.get('sslPort'), () => {
+    Logger.info(`http running on port ${app.get('sslPort')}`);
+});
