@@ -45,10 +45,8 @@ module.exports = class AlexaManager {
             const app = req.slot('lgApps');
             const action = req.slot('appAction');
 
-            this.kodi
-                .turnTVOn()
-                .then(() => Promise.delay(3000))
-                .then(() => this.lg.lgApps(app, action))
+            this.lg
+                .lgApps(app, action)
                 .then(() => res.say('...').send())
                 .catch((err) => {
                     Logger.error(err.message || err);
