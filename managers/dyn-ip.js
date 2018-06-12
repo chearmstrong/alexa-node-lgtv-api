@@ -1,4 +1,4 @@
-// http://chearmstrong:gSXgPUhG@freedns.afraid.org/nic/update?hostname=chearmstrong.mooo.com&myip=146.90.49.36
+// http://<username>:<password>@freedns.afraid.org/nic/update?hostname=<username>.mooo.com&myip=x.x.x.x
 
 const publicIp = require('public-ip');
 const Promise = require('bluebird');
