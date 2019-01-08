@@ -1,6 +1,8 @@
 # Control LG TV (Custom Alexa Skill)
 
-My custom Amazon Echo Alexa skill, that I was running locally on my Raspberry Pi. I'm no longer using it, so putting it here.
+My custom Amazon Echo Alexa skill (unpublished). I was running the backend code locally on my Raspberry Pi, to enbable me to control my TV on my local network.
+
+I'm no longer using it, so putting it here for reference.
 
 ## Getting Started
 
@@ -26,5 +28,3 @@ To get this up and running as is, you'll need the following:
 ## Authors
 
 * **Ché Armstrong** - [Twitter](https://twitter.com/CheArmtrong)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
